@@ -1,0 +1,48 @@
+#!/bin/bash
+
+up() {
+	docker-compose up -d
+}
+
+start() {
+	docker-compose start
+}
+
+stop() {
+	docker-compose stop
+}
+
+status() {
+	docker-compose ps
+}
+
+down() {
+	echo -n "Remove the docker image, Are you sure? [y/N]: "
+	read -r REPLY
+	if echo "$REPLY" | grep -iq "^y" ;then
+		docker-compose down
+	fi
+}
+
+case "$1" in
+	up)
+		up
+		;;
+	start)
+		start
+		;;
+	stop) 
+		stop
+		;;
+	status) 
+		status
+		;;
+	down)
+		down
+		;;
+	*)
+		echo $"Usage: $0 {up|start|stop|status|down}"
+		exit 1
+esac
+
+
