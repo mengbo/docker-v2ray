@@ -10,8 +10,6 @@ services:
     command: v2ray -config=/etc/v2ray/config.json
   pac-httpd:
     container_name: pac-httpd
-    environment:
-      restart: always
     image: busybox
     ports:
       - 127.0.0.1:80:80
