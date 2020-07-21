@@ -129,7 +129,7 @@
         "security": "tls",
         "tlsSettings": {
           "serverName": "your-server-name",
-          "allowInsecure": false,
+          "allowInsecure": true,
           "allowInsecureCiphers": false,
           "disableSystemRoot": false,
           "certificates": [
